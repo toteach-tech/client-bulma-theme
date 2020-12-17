@@ -1,6 +1,6 @@
 {
   "name": "@toteach-tech/client-bulma-theme",
-  "version": "0.0.5",
+  "version": "1.0.0",
   "description": "Bulma based css theme",
   "main": "index.js",
   "scripts": {
