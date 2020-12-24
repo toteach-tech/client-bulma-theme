@@ -18,16 +18,7 @@ yarn-error.log*
 .idea
 .vscode
 *.suo
-*.ntvs*base
-       components
-       elements
-       form
-       grid
-       helpers
-       layout
-       themes
-       utilities
-       index.scss
+*.ntvs*
 *.njsproj
 *.sln
 .nvmrc
