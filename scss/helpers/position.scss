@@ -1,0 +1,8 @@
+.is-overlay {
+  @extend %overlay;
+}
+
+.is-relative {
+  position: relative !important;
+}
+

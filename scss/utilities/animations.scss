@@ -1,3 +1,12 @@
+@keyframes spinAround {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+
 @keyframes shake {
   10%,
   90% {
@@ -21,6 +30,7 @@
   }
 }
 
+
 .slide-out-enter-active,
 .slide-out-leave-active {
   transition: all 120ms;
@@ -32,3 +42,4 @@
   opacity: 0;
   transform: translateY(-1rem);
 }
+

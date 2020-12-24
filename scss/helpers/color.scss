@@ -1,0 +1,62 @@
+@each $name, $pair in $colors {
+  $color: nth($pair, 1);
+  .has-text-#{$name} {
+    --has-text-hover-delta: -10%;
+    --has-text-hover-#{$name}-l: calc(#{var(--#{$name}-l)} + #{var(--has-text-hover-delta)});
+    --has-text-hover-color: hsla(var(--#{$name}-h), var(--#{$name}-s), var(--has-text-hover-#{$name}-l), var(--#{$name}-a));
+    color: var(--#{$name}, #{$color}) !important;
+    &:hover,
+    &:focus {
+      color: var(--has-text-hover-color, #{bulmaDarken($color, 10%)}) !important;
+    }
+  }
+  .has-background-#{$name} {
+    background-color: var(--#{$name}, #{$color}) !important;
+  }
+  @if length($pair) >= 4 {
+    $color-light: nth($pair, 3);
+    $color-dark: nth($pair, 4);
+    // Light
+    .has-text-#{$name}-light {
+      --has-text-light-hover-delta: -10%;
+      --has-text-light-hover-#{$name}-l: calc(#{var(--#{$name}-light-l)} + #{var(--has-text-light-hover-delta)});
+      --has-text-light-hover-color: hsla(var(--#{$name}-h), var(--#{$name}-s), var(--has-text-light-hover-#{$name}-l), var(--#{$name}-a));
+      color: var(--#{$name}-light, #{$color-light}) !important;
+    }
+    a.has-text-#{$name}-light {
+      &:hover,
+      &:focus {
+        color: var(--has-text-light-hover-color, #{bulmaDarken($color-light, 10%)}) !important;
+      }
+    }
+    .has-background-#{$name}-light {
+      background-color: var(--#{$name}-light, #{$color-light}) !important;
+    }
+    // Dark
+    .has-text-#{$name}-dark {
+      --has-text-dark-hover-delta: 10%;
+      --has-text-dark-hover-#{$name}-l: calc(#{var(--#{$name}-dark-l)} + #{var(--has-text-dark-hover-delta)});
+      --has-text-dark-hover-color: hsla(var(--#{$name}-h), var(--#{$name}-s), var(--has-text-dark-hover-#{$name}-l), var(--#{$name}-a));
+      color: var(--#{$name}-dark, #{$color-dark}) !important;
+    }
+    a.has-text-#{$name}-dark {
+      &:hover,
+      &:focus {
+        color: var(--has-text-dark-hover-color, #{bulmaLighten($color-dark, 10%)}) !important;
+      }
+    }
+    .has-background-#{$name}-dark {
+      background-color: var(--#{$name}-dark, #{$color-dark}) !important;
+    }
+  }
+}
+
+@each $name, $shade in $shades {
+  .has-text-#{$name} {
+    color: var(--#{$name}, #{$shade}) !important;
+  }
+  .has-background-#{$name} {
+    background-color: var(--#{$name}, #{$shade}) !important;
+  }
+}
+
